@@ -6,19 +6,18 @@
   --font-semi: 600;
 }
 
-/*===== Colores =====*/
 :root{
   --first-color: #3700B3;
   --second-color: #ffffff;
 }
 
-/*===== Fuente y tipografia =====*/
 :root{
   --body-font: 'Poppins', sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
 }
+
 @media screen and (max-width: 768px){
   :root{
     --big-font-size: 2rem;
@@ -32,7 +31,6 @@
   }
 }
 
-/*===== Margenes =====*/
 :root{
   --mb-1: 0.5rem;
   --mb-2: 1rem;
@@ -462,22 +460,23 @@ video{
   }
 }
 
+/* Hand wave */
+
 .wave {
-  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.5s;        /* Change to speed up or slow down */
-  animation-iteration-count: infinite;  /* Never stop waving :) */
-  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
   display: inline-block;
 }
 
 @keyframes wave-animation {
     0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
-   20% { transform: rotate(-8.0deg) }
+   10% { transform: rotate(14.0deg) }
    30% { transform: rotate(14.0deg) }
    40% { transform: rotate(-4.0deg) }
    50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+   60% { transform: rotate( 0.0deg) }
   100% { transform: rotate( 0.0deg) }
 }
 
