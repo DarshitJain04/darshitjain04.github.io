@@ -8,8 +8,8 @@
 
 /*===== Colores =====*/
 :root{
-  --first-color: #4070F4;
-  --second-color: #0E2431;
+  --first-color: #3700B3;
+  --second-color: #ffffff;
 }
 
 /*===== Fuente y tipografia =====*/
@@ -19,11 +19,16 @@
   --h2-font-size: 1.25rem;
   --normal-font-size: 0.938rem;
 }
+@media screen and (max-width: 768px){
+  :root{
+    --big-font-size: 2rem;
+    --h2-font-size: 1rem;
+    --normal-font-size: 1.2rem;
+  }
+}
 @media screen and (min-width: 768px){
   :root{
     --big-font-size: 3.5rem;
-    --h2-font-size: 2rem;
-    --normal-font-size: 1rem;
   }
 }
 
@@ -50,6 +55,7 @@
   box-sizing: border-box;
 }
 html{
+  background: #121212;
   scroll-behavior: smooth;
 }
 body{
@@ -72,8 +78,21 @@ a{
 img{
   max-width: 100%;
   height: auto;
-  display: block;
 }
+
+.home__img img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+  margin: auto;
+}
+
+a.devlup, a.spc {
+  color: #fff;
+  border-bottom: 1.8px solid #3700B3;
+}
+
 
 /*===== CLASS CSS ===== */
 .section-title{
@@ -116,8 +135,7 @@ img{
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #fff;
-  box-shadow: 0 1px 4px rgba(146,161,176,.15);
+  background-color: #121212;
 }
 
 /*===== NAV =====*/
@@ -136,7 +154,7 @@ img{
     width: 80%;
     height: 100%;
     padding: 2rem;
-    background-color: var(--second-color);
+    background-color: #121212;
     transition: .5s;
   }
 }
@@ -217,19 +235,24 @@ img{
   right: 0;
   bottom: 0;
   width: 295px;
+  padding-left: 20px;
 }
 
 /*BUTTONS*/
 .button{
+  border: 2px solid var(--first-color);
+  background: transparent;
   display: inline-block;
-  background-color: var(--first-color);
   color: #fff;
   padding: .75rem 2.5rem;
   font-weight: var(--font-semi);
-  border-radius: .5rem;
+  border-radius: 2rem;
+  transition: background 0.3s ease-in-out;
+  font-size: var(--normal-font-size);
 }
 .button:hover{
   box-shadow: 0 10px 36px rgba(0,0,0,.15);
+  background: var(--first-color);
 }
 
 /* ===== ABOUT =====*/
@@ -240,13 +263,11 @@ img{
 .about__subtitle{
   margin-bottom: var(--mb-2);
 }
-.about__img{
+video{
   justify-self: center;
+  border-radius: .7rem;
 }
-.about__img img{
-  width: 200px;
-  border-radius: .5rem;
-}
+
 
 /* ===== SKILLS =====*/
 .skills__container{
@@ -259,58 +280,33 @@ img{
 .skills__text{
   margin-bottom: var(--mb-4);
 }
-.skills__data{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  font-weight: var(--font-semi);
-  padding: .5rem 1rem;
-  margin-bottom: var(--mb-4);
-  border-radius: .5rem;
-  box-shadow: 0 4px 25px rgba(14,36,49,.15);
-}
-.skills__icon{
-  font-size: 2rem;
-  margin-right: var(--mb-2);
-  color: var(--first-color);
-}
-.skills__names{
-  display: flex;
-  align-items: center;
-}
-.skills__bar{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: var(--first-color);
-  height: .25rem;
-  border-radius: .5rem;
-  z-index: var(--z-back);
-}
-.skills__html{
-  width: 95%;
-}
-.skills__css{
-  width: 85%;
-}
-.skills__js{
-  width: 65%;
-}
-.skills__ux{
-  width: 85%;
-}
+
 .skills__img{
   border-radius: .5rem;
 }
 
 /* ===== WORK =====*/
+.card {
+  background: #242424;
+  border-radius: 1rem;
+}
+
+.card-title {
+  text-align: center;
+}
+.card-text {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
 .work__container{
   row-gap: 2rem;
 }
 .work__img{
-  box-shadow: 0 4px 25px rgba(14,36,49,.15);
-  border-radius: .5rem;
+  width:100%;
+  height: 200px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   overflow: hidden;
 }
 .work__img img{
@@ -322,6 +318,10 @@ img{
 }
 
 /* ===== CONTACT =====*/
+.contact__container{
+  row-gap: 2rem;
+}
+
 .contact__input{
   width: 100%;
   font-size: var(--normal-font-size);
@@ -333,17 +333,28 @@ img{
   margin-bottom: var(--mb-4);
 }
 .contact__button{
+  outline:none;
+  border: 2px solid var(--first-color);
+  transition: background 0.3s ease-in-out;
+  background: transparent;
   display: block;
-  border: none;
-  outline: none;
+  color: #fff;
+  padding: .75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: 2rem;
   font-size: var(--normal-font-size);
   cursor: pointer;
   margin-left: auto;
 }
 
+.contact__button:hover{
+  box-shadow: 0 10px 36px rgba(0,0,0,.15);
+  background: var(--first-color);
+}
+
 /* ===== FOOTER =====*/
 .footer{
-  background-color: var(--second-color);
+  background-color: #3700B3;
   color: #fff;
   text-align: center;
   font-weight: var(--font-semi);
@@ -359,7 +370,9 @@ img{
 .footer__icon{
   font-size: 1.5rem;
   color: #fff;
-  margin: 0 var(--mb-2)
+  margin: 0 var(--mb-2);
+}
+.footer__icon:hover{
 }
 
 /* ===== MEDIA QUERIES=====*/
@@ -423,7 +436,7 @@ img{
     align-items: center;
     text-align: initial;
   }
-  .about__img img{
+  video{
     width: 300px;
   }
   .work__container{
@@ -448,3 +461,23 @@ img{
     right: 10%;
   }
 }
+
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
